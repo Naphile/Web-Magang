@@ -1,0 +1,120 @@
+body {
+    background-image: url(assets/img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.form {
+    --background: #00000060;
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #ffffff;
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    background: var(--background);
+    right: -150px;
+    bottom: -180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+}
+
+.form>p {
+    font-family: var(--font-DelaGothicOne);
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto;
+    margin-left: 110px;
+    margin-top: 40px;
+}
+
+.signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: auto 15px 15px auto;
+    width: 250px;
+    height: 40px;
+    margin-left: 23px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    background-color: var(--bg-color);
+    box-shadow:
+        1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px 1px 0 #000;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 250ms;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 130px;
+}
+
+.signin a {
+    color: #4d4d4d;
+}
+
+.signin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #000000;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+.signin:hover {
+    color: #e8e8e8;
+}
+
+.signin>a:hover {
+    color: #ffffffc7;
+}
+
+.signin:hover::before {
+    width: 100%;
+}
+
+.signin svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.piclog img {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    border-radius: 100px;
+    margin-right: 100px;
+}

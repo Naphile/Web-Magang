@@ -1,0 +1,616 @@
+body {
+  background-color: #f4f4f4;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Arial, sans-serif;
+
+}
+
+/* Halaman index.php/Dashboard */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #ff0000;
+  /* padding: 0px 0; */
+  height: 71px;
+  border-bottom: 3.5px solid rgb(44, 44, 44);
+  /* padding-bottom: 10px; */
+  padding: 10px 0px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.header .logo {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100px;
+  margin-left: 20px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.header .header-profile {
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.header-profile h1 {
+  font-size: medium;
+  color: rgb(255, 255, 255);
+  margin-left: 20px;
+}
+
+.header .photo {
+  position: relative;
+  right: 0%;
+  align-items: center;
+}
+
+.sidebar {
+  height: 100vh; /* Tinggi sidebar 100% viewport height */
+  width: 250px; /* Lebar sidebar */
+  background-color: #333; /* Warna latar belakang sidebar */
+  padding-top: 20px; /* Padding atas */
+  position: fixed; /* Buat sidebar tetap di tempat */
+  left: 0; /* Posisi di kiri */
+  top: 0; /* Posisi di atas */
+  overflow-x: hidden; /* Sembunyikan scroll horizontal */
+}
+
+.sidebar-hidden {
+  width: 0;
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+
+.content-hidden {
+  margin-left: 0;
+}
+
+.userprofil-hidden {
+  width: 0;
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+
+.reportpelaporan-hidden {
+  width: 0;
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+
+.sidebar-toggle {
+  background-color: #170000;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px;
+  width: 50px;
+}
+
+.sidebar h3 {
+  top: 80px;
+  position: relative;
+  font-size: small;
+  color: white;
+  text-align: center;
+}
+
+.sidebar p {
+  top: 65px;
+  position: relative;
+  color: #ff0000;
+}
+
+.sidebar ul li a:hover {
+  background-color: #333;
+  scale: 1.1;
+  box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+}
+
+.sidebar ul li a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: #FFFFFF70;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.sidebar ul li a:hover::before {
+  scale: 3;
+}
+
+.sidebar ul li a:active {
+  scale: 1;
+}
+
+.sidebar .user-profil img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar .report-pelaporan img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar .profil {
+  align-items: center;
+  position: fixed;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  width: 170px;
+  justify-content: flex-start;
+  font-size: 16px;
+  font-weight: 50;
+  color: white;
+  border: 2px solid rgba(252, 70, 100, 0);
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+  top: 180px;
+  left: 20px;
+  border-radius: 5px;
+}
+
+.sidebar .pelaporan {
+  align-items: center;
+  position: fixed;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  width: 170px;
+  justify-content: flex-start;
+  font-size: 16px;
+  font-weight: 50;
+  color: white;
+  border: 2px solid rgba(252, 70, 100, 0);
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+  top: 240px;
+  left: 20px;
+  border-radius: 5px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0.5rem 1.4rem;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  text-align: justify;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  left: 50px;
+}
+
+.content {
+  margin-left: 250px; /*Tambahkan margin kiri sebesar lebar sidebar*/
+  padding: 20px;
+  flex: 1; /*Membuat konten utama fleksibel dan mengambil sisa ruang*/
+  display: flex;
+  align-items: center;
+}
+
+.content-welcome {
+  margin-right: 10px; /* Atur jarak antara kedua elemen */
+  font-weight: bold;
+}
+
+.content-name {
+  color: #170000; /* Warna font lebih pudar */
+  font-weight: normal;
+}
+
+a .Btn {
+  left: 20px;
+  top: 390px;
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  bottom: 0%;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgb(0, 0, 0);
+  background-color: rgb(255, 0, 0);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+  background-color: #ff0000;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  margin-left: -5px;
+}
+
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
+
+/* HALAMAN REPORT.PHP */
+.header-report {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #ff0000;
+  /* padding: 0px 0; */
+  height: 71px;
+  border-bottom: 3.5px solid rgb(44, 44, 44);
+  /* padding-bottom: 10px; */
+  padding: 10px 0px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* z-index: 1; */
+
+  /* position: relative;
+  text-align: center;
+  background-color: #c21a1a;
+  padding: 20px 0;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px; */
+}
+
+.header-report .text-trs {
+  flex: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.header-report h1 {
+  color: rgb(255, 255, 255);
+  margin: 0px;
+}
+
+.logo-panjang {
+  flex: 0 0 auto;
+  width: 100px;
+  margin-left: 20px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+
+  /* position: relative;
+  top: 35px;
+  left: 25px;
+  width: 100px; */
+
+  /* Sesuaikan dengan lebar logo Anda */
+  /* height: 50px; */
+  
+  /* Biarkan tingginya disesuaikan agar proporsi gambar tetap terjaga */
+  /* padding: -255px; */
+  
+  /* Untuk memberikan jarak antara logo dan tepi header */
+  /* border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px; */
+}
+
+.header-report .logo-panjang:hover {
+  cursor: pointer;
+}
+
+
+/* /FORM REGISTRASI/ */
+/* Style untuk mempercantik tampilan form (opsional) */
+.container {
+  max-width: 650px; /*melebarkan bg regist ke samping*/
+  margin: 0 auto;
+  margin-top: 25px;
+  padding: 25px; /*kalo mau memperbesar bg pada form regist*/
+  background-color: #ffffff;
+  border-radius: 65px; /*mengatur radius border pd form regist*/
+  box-shadow: 0 0 10px rgb(255, 0, 0);
+  position: relative;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  padding-left: 50px;
+}
+
+.fase-group {
+  margin-bottom: 25px;
+  padding-left: 50px;
+  
+}
+.fase-group label {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.fase-group input{
+  max-width: 200px;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: #ff0000;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 1px;
+}
+label {
+  font-weight: bold;
+  
+}
+
+
+input[type="text"], input[type="file"] {
+  width: 90%; /*mengubah ukuran border pada text*/
+  padding: 20px;
+  border: 1px solid #414141;
+  border-radius: 5px;
+}
+input[type="submit"] {
+  background-color: #ee2308;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* .custum-file-upload {
+  height: 100px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #cacaca;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
+}
+
+.custum-file-upload .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+  height: 80px;
+  fill: rgba(75, 85, 99, 1);
+}
+
+.custum-file-upload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: rgba(75, 85, 99, 1);
+}
+
+.custum-file-upload input {
+  display: none;
+} */
+
+.tombol {
+  text-align: center;
+}
+
+/* Button */
+button {
+  display: inline-block;
+  border-radius: 11px;
+  background-color: #ff0000;
+  border: 2px solid rgb(0, 0, 0);
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 110px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  justify-content: center;
+  box-shadow: 0 0 10px rgb(0, 0, 0)
+}
+
+button span:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #9d0000;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+ /* form foto */
+ .fase-group {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* .fase-group:hover {
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.fase-group:active {
+  transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+} */
+
+.custom-file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 100px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.custom-file-upload .icon {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+}
+
+.custom-file-upload .text {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.custom-file-upload span {
+    font-size: 16px;
+    color: #333;
+}
+
+#preview img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

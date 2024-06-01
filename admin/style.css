@@ -1,0 +1,86 @@
+body {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #ff0000;
+    height: 71px;
+    border-bottom: 3.5px solid rgb(44, 44, 44);
+    padding: 10px 0px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header-admin .admin-panel {
+    color: #ffffff;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    margin-left: 10px;
+}
+
+.header-admin .photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.container {
+    max-width: 650px; /*melebarkan bg regist ke samping*/
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: 25px; /*kalo mau memperbesar bg pada form regist*/
+    background-color: #ffffff;
+    border-radius: 65px; /*mengatur radius border pd form regist*/
+    box-shadow: 0 0 10px rgb(13, 0, 255);
+    position: relative;
+}
+
+/* style.css */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.photo {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.profile-container.show .dropdown-content {
+    display: block;
+}
